@@ -1,0 +1,13 @@
+# Default values for autoneg.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+gke-autoneg-controller:
+  image:
+    repository: gcr.io/kubebuilder/kube-rbac-proxy
+    tag: "v0.8.0"
+
+gke-autoneg-controller:
+  image:
+    repository: ghcr.io/googlecloudplatform/gke-autoneg-controller/gke-autoneg-controller
+    tag: "latest"
