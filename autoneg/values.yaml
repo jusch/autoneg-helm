@@ -2,12 +2,14 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-gke-autoneg-controller:
+gke_autoneg_controller:
   image:
     repository: gcr.io/kubebuilder/kube-rbac-proxy
     tag: "v0.8.0"
+  nodeSelector: 
+    iam.gke.io/gke-metadata-server-enabled: "true"
 
-gke-autoneg-controller:
+kube_rbac_proxy:
   image:
     repository: ghcr.io/googlecloudplatform/gke-autoneg-controller/gke-autoneg-controller
     tag: "latest"

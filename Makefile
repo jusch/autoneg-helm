@@ -6,3 +6,8 @@ login:
 
 publish:
 	helm push autoneg-*.tgz oci://ghcr.io/jusch/autoneg-helm
+
+clean:
+	rm autoneg-*.tgz
+
+release: build publish clean
