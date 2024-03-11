@@ -64,19 +64,11 @@ spec:
             port: 8081
           initialDelaySeconds: 5
           periodSeconds: 10
-        resources:
-          limits:
-            cpu: 100m
-            memory: 30Mi
-          requests:
-            cpu: 100m
-            memory: 20Mi
         securityContext:
           allowPrivilegeEscalation: false
           privileged: false
       securityContext:
         runAsNonRoot: true
-      nodeSelector: 
-        {{ .Values.gke_autoneg_controller.nodeSelector }}
+      nodeSelector: {{ toYaml $.Values.gke_autoneg_controller.nodeSelector | nindent 8 }}
       serviceAccountName: autoneg-controller-manager
       terminationGracePeriodSeconds: 10

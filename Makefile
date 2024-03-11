@@ -11,3 +11,8 @@ clean:
 	rm autoneg-*.tgz
 
 release: build publish clean
+
+template:
+	helm template autoneg-*.tgz
+
+debug: build template clean
